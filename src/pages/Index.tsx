@@ -1,14 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ProductCard } from "@/components/ProductCard";
+import { CartDrawer } from "@/components/CartDrawer";
 import { mockProducts, categories, Product } from "@/data/mockProducts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { useCart } from "@/contexts/CartContext";
+import { User } from "lucide-react";
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Products");
   const [searchTerm, setSearchTerm] = useState("");
   const { toast } = useToast();
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const filteredProducts = mockProducts.filter((product) => {
     const matchesCategory =
@@ -22,6 +28,7 @@ const Index = () => {
   });
 
   const handleAddToCart = (product: Product) => {
+    addToCart(product);
     toast({
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
@@ -32,10 +39,24 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <header className="border-b">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-4xl font-bold text-primary mb-2">Legal Addiction</h1>
-          <p className="text-muted-foreground">
-            Premium caffeine-based beverages for the discerning enthusiast
-          </p>
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <h1 className="text-4xl font-bold text-primary mb-2">Legal Addiction</h1>
+              <p className="text-muted-foreground">
+                Premium caffeine-based beverages for the discerning enthusiast
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => navigate("/profile")}
+              >
+                <User className="h-5 w-5" />
+              </Button>
+              <CartDrawer />
+            </div>
+          </div>
         </div>
       </header>
 
