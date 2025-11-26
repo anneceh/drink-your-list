@@ -27,7 +27,7 @@ export const CartDrawer = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="relative">
+        <Button variant="outline" size="default" className="relative h-12 min-w-[48px]" aria-label="Shopping Cart">
           <ShoppingCart className="h-5 w-5" />
           {totalItems > 0 && (
             <Badge
@@ -68,8 +68,9 @@ export const CartDrawer = () => {
                       <Button
                         size="icon"
                         variant="outline"
-                        className="h-8 w-8"
+                        className="h-10 w-10"
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        aria-label="Decrease quantity"
                       >
                         <Minus className="h-4 w-4" />
                       </Button>
@@ -77,16 +78,18 @@ export const CartDrawer = () => {
                       <Button
                         size="icon"
                         variant="outline"
-                        className="h-8 w-8"
+                        className="h-10 w-10"
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        aria-label="Increase quantity"
                       >
                         <Plus className="h-4 w-4" />
                       </Button>
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-8 w-8 ml-auto"
+                        className="h-10 w-10 ml-auto"
                         onClick={() => removeFromCart(item.id)}
+                        aria-label="Remove from cart"
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
@@ -103,12 +106,12 @@ export const CartDrawer = () => {
 
         {items.length > 0 && (
           <SheetFooter className="border-t pt-4">
-            <div className="w-full space-y-4">
+              <div className="w-full space-y-4">
               <div className="flex items-center justify-between text-lg font-semibold">
                 <span>Total</span>
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
-              <Button className="w-full" onClick={handleCheckout}>
+              <Button className="w-full h-12" onClick={handleCheckout}>
                 Checkout
               </Button>
             </div>
