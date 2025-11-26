@@ -1,3 +1,16 @@
+import espressoBlend from "@/assets/espresso-blend.jpg";
+import fusionEnergy from "@/assets/fusion-energy.jpg";
+import matchaPowder from "@/assets/matcha-powder.jpg";
+import coldBrew from "@/assets/cold-brew.jpg";
+import zeroSugarEnergy from "@/assets/zero-sugar-energy.jpg";
+import englishBreakfast from "@/assets/english-breakfast.jpg";
+import yerbaMate from "@/assets/yerba-mate.jpg";
+import lightRoast from "@/assets/light-roast.jpg";
+import energyShot from "@/assets/energy-shot.jpg";
+import chaiConcentrate from "@/assets/chai-concentrate.jpg";
+import guaranaPowder from "@/assets/guarana-powder.jpg";
+import instantCoffee from "@/assets/instant-coffee.jpg";
+
 export interface Product {
   id: string;
   sku: string;
@@ -21,7 +34,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 150,
     category: "Coffee",
     stockQuantity: 45,
-    imageUrl: "/placeholder.svg",
+    imageUrl: espressoBlend,
     available: true,
   },
   {
@@ -33,7 +46,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 200,
     category: "Energy Drinks",
     stockQuantity: 120,
-    imageUrl: "/placeholder.svg",
+    imageUrl: fusionEnergy,
     available: true,
   },
   {
@@ -45,7 +58,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 70,
     category: "Tea",
     stockQuantity: 30,
-    imageUrl: "/placeholder.svg",
+    imageUrl: matchaPowder,
     available: true,
   },
   {
@@ -57,7 +70,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 180,
     category: "Coffee",
     stockQuantity: 60,
-    imageUrl: "/placeholder.svg",
+    imageUrl: coldBrew,
     available: true,
   },
   {
@@ -69,7 +82,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 160,
     category: "Energy Drinks",
     stockQuantity: 200,
-    imageUrl: "/placeholder.svg",
+    imageUrl: zeroSugarEnergy,
     available: true,
   },
   {
@@ -81,7 +94,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 50,
     category: "Tea",
     stockQuantity: 80,
-    imageUrl: "/placeholder.svg",
+    imageUrl: englishBreakfast,
     available: true,
   },
   {
@@ -93,7 +106,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 85,
     category: "Specialty",
     stockQuantity: 40,
-    imageUrl: "/placeholder.svg",
+    imageUrl: yerbaMate,
     available: true,
   },
   {
@@ -105,7 +118,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 140,
     category: "Coffee",
     stockQuantity: 35,
-    imageUrl: "/placeholder.svg",
+    imageUrl: lightRoast,
     available: true,
   },
   {
@@ -117,7 +130,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 220,
     category: "Energy Drinks",
     stockQuantity: 150,
-    imageUrl: "/placeholder.svg",
+    imageUrl: energyShot,
     available: true,
   },
   {
@@ -129,7 +142,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 60,
     category: "Tea",
     stockQuantity: 50,
-    imageUrl: "/placeholder.svg",
+    imageUrl: chaiConcentrate,
     available: true,
   },
   {
@@ -141,7 +154,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 100,
     category: "Specialty",
     stockQuantity: 25,
-    imageUrl: "/placeholder.svg",
+    imageUrl: guaranaPowder,
     available: true,
   },
   {
@@ -153,7 +166,7 @@ export const mockProducts: Product[] = [
     caffeineContent: 130,
     category: "Coffee",
     stockQuantity: 90,
-    imageUrl: "/placeholder.svg",
+    imageUrl: instantCoffee,
     available: true,
   },
 ];
